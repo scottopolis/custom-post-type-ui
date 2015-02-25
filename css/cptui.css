@@ -1,12 +1,18 @@
 .cptui-help {
-	border-radius: 50%;
-	display: inline-block;
-	height: 15px;
-	margin-left: 2px;
-	text-align: center;
-	width: 15px;
+    color: #424242;
+    opacity: 0.5;
+    text-decoration: none;
+    width: 16px;
+    margin-left: 4px;
 }
-.cptui-help:hover { font-weight: bold; }
+.cptui-help:hover {
+    color: #0074a2;
+    opacity: 1;
+}
+.cptui-help:focus {
+    box-shadow: none;
+}
+
 .required { color: rgb(255,0,0); }
 .cptui-table #excerpt { height: 16px; margin-right: 4px; width: auto; }
 .cptui-table td { vertical-align: top; width: 50%; }
