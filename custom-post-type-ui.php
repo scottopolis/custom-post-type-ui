@@ -23,10 +23,10 @@ define( 'CPTUI_WP_VERSION', get_bloginfo( 'version' ) );
  * Load our Admin UI class that powers our form inputs.
  * @since 1.0.0
  */
-function cptui_load_ui_class() {
+function cptui_load_classes() {
 	require_once( plugin_dir_path( __FILE__ ) . 'classes/class.cptui_admin_ui.php' );
 }
-add_action( 'init', 'cptui_load_ui_class' );
+add_action( 'init', 'cptui_load_classes' );
 
 /**
  * Flush our rewrite rules on deactivation.
