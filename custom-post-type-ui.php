@@ -25,6 +25,7 @@ define( 'CPTUI_WP_VERSION', get_bloginfo( 'version' ) );
  */
 function cptui_load_classes() {
 	require_once( plugin_dir_path( __FILE__ ) . 'classes/class.cptui_admin_ui.php' );
+	require_once( plugin_dir_path( __FILE__ ) . 'classes/class.help-menus.php' );
 }
 add_action( 'init', 'cptui_load_classes' );
 
