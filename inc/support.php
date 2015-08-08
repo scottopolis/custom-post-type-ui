@@ -2,7 +2,9 @@
 /* This file controls everything about our support section. */
 
 # Exit if accessed directly
-if ( ! defined( 'ABSPATH' ) ) exit;
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
 
 /**
  * Add our cptui.js file, with dependencies on jQuery.
