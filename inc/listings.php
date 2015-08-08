@@ -1,4 +1,7 @@
 <?php
+/**
+ * This file controls all of the content from the Registered Types and Taxes page.
+ */
 
 # Exit if accessed directly
 if ( ! defined( 'ABSPATH' ) ) exit;
