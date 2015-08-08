@@ -54,15 +54,21 @@ add_action( 'init', 'cptui_load_textdomain' );
  */
 function cptui_plugin_menu() {
 	add_menu_page( __( 'Custom Post Types', 'cpt-plugin' ), __( 'CPT UI', 'cpt-plugin' ), 'manage_options', 'cptui_main_menu', 'cptui_settings' );
-	add_submenu_page( 'cptui_main_menu', __( 'Add/Edit Post Types', 'cpt-plugin' ), __( 'Add/Edit Post Types', 'cpt-plugin' ), 'manage_options', 'cptui_manage_post_types', 'cptui_manage_post_types' );
-	add_submenu_page( 'cptui_main_menu', __( 'Add/Edit Taxonomies', 'cpt-plugin' ), __( 'Add/Edit Taxonomies', 'cpt-plugin' ), 'manage_options', 'cptui_manage_taxonomies', 'cptui_manage_taxonomies' );
+	$post_types = add_submenu_page( 'cptui_main_menu', __( 'Add/Edit Post Types', 'cpt-plugin' ), __( 'Add/Edit Post Types', 'cpt-plugin' ), 'manage_options', 'cptui_manage_post_types', 'cptui_manage_post_types' );
+	$taxonomies = add_submenu_page( 'cptui_main_menu', __( 'Add/Edit Taxonomies', 'cpt-plugin' ), __( 'Add/Edit Taxonomies', 'cpt-plugin' ), 'manage_options', 'cptui_manage_taxonomies', 'cptui_manage_taxonomies' );
 	add_submenu_page( 'cptui_main_menu', __( 'Registered Types and Taxes', 'cpt-plugin' ), __( 'Registered Types/Taxes', 'cpt-plugin' ), 'manage_options', 'cptui_listings', 'cptui_listings' );
-	add_submenu_page( 'cptui_main_menu', __( 'Import/Export', 'cpt-plugin' ), __( 'Import/Export', 'cpt-plugin' ), 'manage_options', 'cptui_importexport', 'cptui_importexport' );
+	$import_export = add_submenu_page( 'cptui_main_menu', __( 'Import/Export', 'cpt-plugin' ), __( 'Import/Export', 'cpt-plugin' ), 'manage_options', 'cptui_importexport', 'cptui_importexport' );
 	add_submenu_page( 'cptui_main_menu', __( 'Help/Support', 'cpt-plugin' ), __( 'Help/Support', 'cpt-plugin' ), 'manage_options', 'cptui_support', 'cptui_support' );
 
 	# Remove the default one so we can add our customized version.
-	remove_submenu_page('cptui_main_menu', 'cptui_main_menu');
+	remove_submenu_page( 'cptui_main_menu', 'cptui_main_menu' );
 	add_submenu_page( 'cptui_main_menu', __( 'About CPT UI', 'cpt-plugin' ), __( 'About CPT UI', 'cpt-plugin' ), 'manage_options', 'cptui_main_menu', 'cptui_settings' );
+
+	$helpme = new CPTUI_Help_Menu();
+
+	add_action( 'load-' . $post_types, array( $helpme, 'post_types_help' ) );
+	add_action( 'load-' . $taxonomies, array( $helpme, 'taxonomies_help' ) );
+	add_action( 'load-' . $import_export, array( $helpme, 'import_export_help' ) );
 }
 add_action( 'admin_menu', 'cptui_plugin_menu' );
 
