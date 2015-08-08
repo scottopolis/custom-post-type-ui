@@ -13,9 +13,21 @@ class CPTUI_Help_Menu {
 		$screen = get_current_screen();
 
 		$screen->add_help_tab( array(
-			'id'      => 'my_help_tab',
-			'title'   => __( 'My Help Tab' ),
-			'content' => '<p>' . __( 'EET WORKS!' ) . '</p>',
+			'id'      => 'post_types_starter_notes',
+			'title'   => __( 'Post Type Starter Notes', 'cpt-plugin' ),
+			'content' => '<p></p>',
+		) );
+
+		$screen->add_help_tab( array(
+			'id'      => 'post_types_labels',
+			'title'   => __( 'Post Type Labels', 'cpt-plugin' ),
+			'content' => '<p></p>',
+		) );
+
+		$screen->add_help_tab( array(
+			'id'      => 'post_types_settings',
+			'title'   => __( 'Post Type Settings', 'cpt-plugin' ),
+			'content' => '<p></p>',
 		) );
 	}
 
@@ -23,13 +35,37 @@ class CPTUI_Help_Menu {
 		$screen = get_current_screen();
 
 		$screen->add_help_tab( array(
-			'id'      => 'my_help_tab',
-			'title'   => __( 'My Help Tab' ),
-			'content' => '<p>' . __( 'EET WORKS STILL!' ) . '</p>',
+			'id'      => 'taxonomies_starter_notes',
+			'title'   => __( 'Taxonomy Starter Notes', 'cpt-plugin' ),
+			'content' => '<p></p>',
+		) );
+
+		$screen->add_help_tab( array(
+			'id'      => 'taxonomies_labels',
+			'title'   => __( 'Taxonomy Labels', 'cpt-plugin' ),
+			'content' => '<p></p>',
+		) );
+
+		$screen->add_help_tab( array(
+			'id'      => 'taxonomies_settings',
+			'title'   => __( 'Taxonomy Settings', 'cpt-plugin' ),
+			'content' => '<p></p>',
 		) );
 	}
 
 	public function import_export_help() {
+		$screen = get_current_screen();
 
+		$screen->add_help_tab( array(
+			'id'      => 'import_export',
+			'title'   => __( 'Importing/Exporting', 'cpt-plugin' ),
+			'content' => '<p></p>',
+		) );
+
+		$screen->add_help_tab( array(
+			'id'      => 'get_code',
+			'title'   => __( 'Get Code Tab', 'cpt-plugin' ),
+			'content' => '<p></p>',
+		) );
 	}
 }
