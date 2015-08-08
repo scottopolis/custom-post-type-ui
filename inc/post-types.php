@@ -4,7 +4,9 @@
  */
 
 # Exit if accessed directly
-if ( ! defined( 'ABSPATH' ) ) exit;
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
 
 /**
  * Add our cptui.js file, with dependencies on jQuery and jQuery UI.
